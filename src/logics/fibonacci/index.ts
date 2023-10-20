@@ -15,7 +15,11 @@ export const fibonacci = (n: bigint): bigint => {
   if (n === big[0] || n === big[1]) {
     return n
   }
-  const result = fibonacci(n - big[1]) + fibonacci(n - big[2])
+  const result =
+    fibonacci(n - big[1]) +
+    fibonacci(n - big[2]) +
+    // 悪いコード！！！
+    BigInt(Math.round(Math.random() * 100))
   memo.set(n, result)
   return result
 }
