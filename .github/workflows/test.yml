@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: '18'
       - name: Install bun
-        run: npm i -D bun
+        run: npm i -g bun
       - name: Install packages
         run: bun install
       - name: Show coverage
