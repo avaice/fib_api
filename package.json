@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "bun run --hot src/routes/index.ts",
-    "start": "bun run --hot src/routes/index.ts",
+    "start": "npm run src/routes/index.ts",
     "prettier:check": "prettier --check ./**/*.ts",
     "lint": "eslint"
   },
