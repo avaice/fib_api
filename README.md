@@ -4,7 +4,7 @@
 
 指定したn番目のフィボナッチ数を返すapiです。
 
-`n < 10000`までの数に対応しています。
+`n < 1500000`までの数で動作を確認しました。
 
 ## Technologies
 
@@ -13,7 +13,7 @@
 - Web Framework
   - Hono
 - Test
-  - bun test (Jest compatible)
+  - bun test
 
 ## How to run
 
