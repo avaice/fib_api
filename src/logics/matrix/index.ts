@@ -1,8 +1,9 @@
 type Matrix2 = [bigint, bigint]
 type Matrix2x2 = [Matrix2, Matrix2] // 2x2の行列型
 
-// 行列計算関数
+// 行列計算関数 (for bigint)
 export const Matrix = {
+  // 行列の積
   mul: (a: Matrix2x2, b: Matrix2x2): Matrix2x2 => {
     return [
       [
@@ -15,6 +16,7 @@ export const Matrix = {
       ],
     ]
   },
+  // 行列の累乗
   pow: (mat: Matrix2x2, n: bigint): Matrix2x2 => {
     if (n === 1n) {
       return mat
