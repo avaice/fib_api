@@ -1,5 +1,4 @@
-const big = [...[0, 1, 2].map((v) => BigInt(v))]
-const memo = new Map<bigint, bigint>()
+import { Matrix } from '../matrix/index'
 
 export const fibonacci = (n: bigint): bigint => {
   if (Number(n) < 0) {
@@ -7,15 +6,17 @@ export const fibonacci = (n: bigint): bigint => {
       'The argument n for the fibonacci(n) must be a positive number.'
     )
   }
-  const memoValue = memo.get(n)
-  if (memoValue) {
-    return memoValue
-  }
 
-  if (n === big[0] || n === big[1]) {
+  if (n === 0n || n === 1n) {
     return n
   }
-  const result = fibonacci(n - big[1]) + fibonacci(n - big[2])
-  memo.set(n, result)
-  return result
+
+  const result = Matrix.pow(
+    [
+      [1n, 1n],
+      [1n, 0n],
+    ],
+    n - 1n
+  )
+  return result[0][0]
 }
