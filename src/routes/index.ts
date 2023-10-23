@@ -1,4 +1,4 @@
-import { Hono } from '../../node_modules/hono/dist/types/hono'
+import { Hono } from 'hono'
 import { fibRoute } from './fib/index'
 
 const app = new Hono()
