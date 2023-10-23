@@ -1,5 +1,5 @@
 import { expect, test } from 'bun:test'
-import { fibonacci } from '.'
+import { fibonacci } from './index'
 
 test('fibonacci function: basic values', () => {
   expect(fibonacci(BigInt(0))).toBe(BigInt('0'))

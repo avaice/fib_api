@@ -1,5 +1,5 @@
-import { Hono } from 'hono'
-import { fibRoute } from './fib'
+import { Hono } from '../../node_modules/hono/dist/types/hono'
+import { fibRoute } from './fib/index'
 
 const app = new Hono()
 

@@ -1,5 +1,5 @@
-import { Context } from 'hono'
-import { fibonacci } from '../../logics/fibonacci'
+import { Context } from '../../../node_modules/hono/dist/types/context'
+import { fibonacci } from '../../logics/fibonacci/index'
 
 export const fibRoute = (c: Context) => {
   const n = Number(c.req.query('n'))
