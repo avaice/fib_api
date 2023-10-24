@@ -46,7 +46,7 @@ Set `PORT={PORT}` to `.env`
 
 ```
 npm i
-npm start # bun will install before running.
+npm start # bun will be install before running.
 ```
 
 ## Directory
