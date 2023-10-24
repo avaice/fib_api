@@ -6,6 +6,15 @@
 
 `n < 1500000`までの数で動作を確認しました。
 
+## API
+
+```
+Base URL: https://fib.cho-ice.xyz
+Endpoint: /fib
+Query: n=数値(フィボナッチ数列の順番を指定する値)
+```
+Demo: https://fib.cho-ice.xyz/fib?n=99
+
 ## Technologies
 
 - Language
@@ -14,6 +23,9 @@
   - Hono
 - Test
   - bun test
+- Linter & Formatter
+  - ESLint
+  - Prettier
 
 ## How to run
 
@@ -39,9 +51,20 @@ npm start # bun will install before running.
 
 ## Directory
 
+主要なファイルのみ記述しています。
+
 - src
   - logics
-    - (logic components...)
+    - fibonacci
+      - index.ts(フィボナッチ数計算)
+      - index.test.ts(ユニットテスト)
+    - matrix
+      - index.ts(行列計算)
+      - index.test.ts(ユニットテスト)
   - routes
-    - index.ts(entry point)
-    - (api routes...)
+    - index.ts(エントリポイント)
+    - fib
+      - index.ts (/fib)
+- README.md
+- Dockerfile (コンテナ管理)
+- build.sh (ビルド＆デプロイ処理)
