@@ -11,7 +11,19 @@ export const fibRoute = (c: Context) => {
     })
   }
 
-  return c.json({
-    result: fibonacci(BigInt(n)).toString(),
-  })
+  const result = fibonacci(BigInt(n))
+
+  // これだとresultの値がダブルクォーテーションで囲まれてしまう
+  // return c.json({
+  //   result: result.toString(),
+  // })
+
+  /**
+   * JSON.stringifyはBigIntに対応していないので、直接JSONを書き出しています。
+   * BigIntの値がString型で保持されないことで、JavaScriptのJSON.parseメソッドで値を正しく読み込めなくなるデメリットがありますが、
+   * JSONの仕様では最大桁数に関する決まりがないため、この実装で返すJSONが本来正しいものであると考えます。
+   * JSON Standard: https://www.ecma-international.org/publications-and-standards/standards/ecma-404/
+   */
+  c.header('Content-Type', 'application/json; charset=UTF-8')
+  return c.body(`{"result":${result.toString()}}`)
 }
